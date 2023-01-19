@@ -7,17 +7,13 @@ function crearPalindromo(palabra: string) {
 let palabraInvertida:string = palabra.substring(0, palabra.length -1).split('').reverse().join(' ')
 let palabraSinEspacios:string = palabraInvertida.replace(/ /g,'') 
 let palindromo =  palabra+palabraSinEspacios;
-  console.log(palindromo);
+  return palindromo;
 
   }
-
-
-  crearPalindromo("americando")
-  crearPalindromo("hola")
-  crearPalindromo("papas fritas")
-  crearPalindromo("tupper")
   
-  
+  console.log(
+    `Primer intento: ${crearPalindromo("americando")} \nSegundo intento: ${  crearPalindromo("hola")}\nTercer intento: ${crearPalindromo("papas fritas")}  \nCuarto intento: ${ crearPalindromo("tupper")}`
+  );
 
 
 
