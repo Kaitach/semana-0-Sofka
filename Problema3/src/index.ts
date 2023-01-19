@@ -21,8 +21,8 @@ function obtenerMayor(...total: number[]){
         numeros.push(numero)
 
     }
-    console.log(` \n ${numeros} de todos estos numeros el mas grande es: ${numeroGrande} `)    
+    console.log(` \n ${numeros} de todos estos numeros el mas grande es: ${numeroGrande} \n\n\n `)    
 
     return numeroGrande;
 }
-obtenerMayor(17,81,8548,17,312,197,43,481,32532)   
+console.log(`Numero mas grande ${obtenerMayor(17,81,8548,17,312,197,43,481,32532)}`)
