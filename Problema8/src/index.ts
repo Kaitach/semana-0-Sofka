@@ -15,21 +15,16 @@ for (let caracter of palabra) {
 // Quitamos el ultimo  caracter agregado a el array palabraNueva y le invertimos el orden
 palabraNueva.pop()
 palabraNueva.reverse()
-
-
  
 // Cocatenamos  los arrays en un nuevo array 
 let palindromo:string[] = palabraOriginal.concat(palabraNueva)
 
-console.log(palindromo)
+return palindromo
+}
 
-  }
-
-
-crearPalindromo("americando")
-crearPalindromo("hola")
-crearPalindromo("papas fritas")
-crearPalindromo("tupper")
+console.log(
+  `Primer intento: ${crearPalindromo("americando")} \nSegundo intento: ${  crearPalindromo("hola")}\nTercer intento: ${crearPalindromo("papas fritas")}  \nCuarto intento: ${ crearPalindromo("tupper")}`
+);
 
 
 
