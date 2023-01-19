@@ -9,7 +9,6 @@ function promedios (...notas:number[]) {
         }
     
   let  promedio:number = total / i;
-    console.log(promedio);
     return promedio;
 }
 
@@ -43,11 +42,7 @@ function promedioMayorMenor (nota:number, ...cantidadnotas:number[]){
 
    return comparacion
    
-
-
-
 }
 
-console.log()
 
 console.log(`Primer promedio ${promedioMayorMenor(6, 14,7,7)} \nSegundo promedio : ${promedioMayorMenor(7, 12,7,7,5,2,12,4,9,7,1,2,3,4,7)} \nTercer promedio : ${promedioMayorMenor(5 ,12,7,7,5,2,12,4,9,7,11,2,3,4,7)}`)
