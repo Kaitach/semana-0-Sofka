@@ -209,46 +209,142 @@ Tercer promedio : Mayor
 
 1. Crear una interfaz llamada “FiguraGeometrica” que contenga dos métodos sin valor
 de retorno llamados “calcularArea” y “calcularPerimetro”.
+
+```bash
+interface FiguraGeometrica {
+    calcularArea(): number
+    calcuarPerimetro(): number
+}
+
+```
+
 2. Codifique una clase abstracta denominada “Figura” que implemente la interfaz
 “FiguraGeometrica”; lo anterior debe contener dos métodos abstractos "calcularArea" y
 "calcularPerimetro", los cuales, no tienen valor de retorno. Además, incluya una
 propiedad protegida "nombre" y un constructor que reciba un parámetro y lo asigne a dicha
 propiedad.
+
+```bash
+abstract class figura implements FiguraGeometrica {
+    protected nombre: string;
+
+    constructor(nombre: string) {
+        this.nombre = nombre;
+    }
+
+    abstract calcuarPerimetro(): number;
+    abstract calcularArea(): number;
+    
+}
+
+```
+
 3. Crear una clase llamada "Circulo" que extienda de la clase "Figura", esta debe tener
 una propiedad "radio" y un constructor que reciba dos parámetros "nombre" y "radio".
 Los debe asignar a las propiedades correspondientes de la clase. Implementa los métodos
 "calcularArea" y "calcularPerimetro" de la interfaz "FiguraGeometrica"
 utilizando las fórmulas para calcular el área y perímetro de un círculo.
+
+
+```bash
+class Circulo extends figura {
+    radio: number
+
+    constructor(nombre: string, radio:number){
+        super(nombre);
+        this.radio = radio;
+    }
+
+calcularArea(): number {
+    console.log(Math.PI * (this.radio**2))
+    return Math.PI * (this.radio**2)    
+}
+calcuarPerimetro(): number {
+    console.log(2 * Math.PI * this.radio)
+    return 2 * Math.PI * this.radio;
+}
+}
+
+```
+
 4. Codificar una clase llamada "Cuadrado" que extienda de la clase "Figura", con una
 propiedad "lado" y un constructor que reciba dos parámetros "nombre" y "lado". Estos
 deben ser asignados a las propiedades correspondientes de la clase. Implementa los
 métodos "calcularArea" y "calcularPerimetro" de la interfaz
 "FiguraGeometrica" utilizando las fórmulas para calcular el área y perímetro de un
 cuadrado.
+
+```bash
+class Cuadrado extends figura {
+    lado: number
+
+    constructor(nombre: string, lado:number){
+        super(nombre);
+        this.lado = lado;
+    }
+
+calcularArea(): number {
+    console.log(this.lado *this.lado )
+    return this.lado *this.lado   
+}
+calcuarPerimetro(): number {
+    console.log(this.lado *4 )
+    return this.lado * 4
+}
+}
+
+
+```
+
 5. Crear una clase "CrearFiguras" que tenga un método "crear", este debe recibir tres
 parámetros "nombre", "tipo" y "valor". Devolver un objeto de la clase "Circulo" o
 "Cuadrado" según el valor del parámetro "tipo".
+
+```bash
+ class CrearFiguras {
+
+    crear(nombre:string, tipo:string, valor:number){
+        if(tipo === "circulo"){
+            return new Circulo(nombre, valor)
+        }
+        else if (tipo === "cuadrado"){
+            return new Cuadrado(nombre, valor)
+        }
+        else{
+            console.error("Tipo de figura invalido");            
+        }
+        
+    }
+}
+```
+
+
 6. En un archivo principal, crea un objeto de la clase "CrearFiguras" y utilizarlo para
 crear dos objetos, uno de tipo "Circulo" y otro de tipo "Cuadrado". Utiliza los objetos para
 imprimir el área y perímetro de cada figura utilizando los métodos de la interfaz
 "FiguraGeometrica".
 
-**Respuesta:**
 ```bash
-function Potencia(base: number, exponente: number) { 
-   let  resultado = base ** exponente;
-   console.log(resultado);
-   
-    }
-   
-Potencia(10, 5);
-}
+ const crearFiguras = new CrearFiguras();
+
+
+const circulo = crearFiguras.crear('Mi círculo', 'circulo', 10);
+circulo?.calcuarPerimetro()
+circulo?.calcularArea()
+
+const cuadrado = crearFiguras.crear('Mi cuadrado', 'cuadrado', 10);
+cuadrado?.calcuarPerimetro()
+cuadrado?.calcularArea()
 
 ```
 
+
 **Respuesta en console.log:**
 ```bash
-314.159
+62.83185307179586
+314.1592653589793
+40
+100
 ```
 ## 6. Saber sí es un palíndromo.
 
