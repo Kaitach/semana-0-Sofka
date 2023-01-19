@@ -1,10 +1,12 @@
+function Potencia(base: number, exponente: number): number {
+  let resultado = base ** exponente;
 
-function Potencia(base: number, exponente: number) { 
-   let  resultado = base ** exponente;
-   console.log(resultado);
-   
-    }
-   
+  return resultado;
+}
 
-
-Potencia(10, 5);
+console.log(
+  `Primer potencia ${Potencia(14, 5)} \nSegunda potencia ${Potencia(
+    2,
+    2
+  )} \nTercer potencia ${Potencia(10, 5)} `
+);
