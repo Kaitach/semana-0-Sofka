@@ -524,7 +524,7 @@ console.log(espacio + estrellas)
  for (let i = 0; i < n - 2 ; i++) {
    base += " ";
  }
- base += "***"
+ base += " ***"
  console.log(base)
 }
 
@@ -545,7 +545,7 @@ imprimirArbol(10)
     ***************  
    ***************** 
   *******************
-         ***
+          ***
 ```
 
 ## Final
